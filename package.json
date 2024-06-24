@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "server": "json-server server.json -w -p 3333"
   },
   "dependencies": {
     "date-fns": "^3.6.0",
@@ -20,6 +20,7 @@
     "@types/react": "^18.3.3",
     "eslint": "^8",
     "eslint-config-next": "14.2.4",
+    "json-server": "^1.0.0-beta.1",
     "typescript": "^5.4.5"
   }
 }
