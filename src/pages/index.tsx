@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next';
-import Image from 'next/image'
+import Image from 'next/image';
 import { format, parseISO } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 import { api } from '../services/api';
@@ -36,8 +36,8 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
             return (
               <li key={episode.id}>
                 <Image 
-                  width={192} 
-                  height={192} 
+                  width={90} 
+                  height={90} 
                   src={episode.thumbnail} 
                   alt={episode.title} 
                   objectFit="cover"
@@ -77,8 +77,8 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                 <tr key={episode.id}>
                   <td>
                     <Image
-                     width={120}
-                     height={120}
+                     width={90}
+                     height={90}
                      src={episode.thumbnail}
                      alt={episode.title}
                      objectFit='cover'
@@ -88,7 +88,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                     <a href="">{episode.title}</a>
                   </td>
                   <td>{episode.members}</td>
-                  <td>{episode.publishedAt}</td>
+                  <td style={{ width: 100 }}>{episode.publishedAt}</td>
                   <td>{episode.durationAsString}</td>
                   <td>
                     <button type='button'>
