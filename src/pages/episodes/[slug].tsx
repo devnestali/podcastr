@@ -1,6 +1,7 @@
 import { format, parseISO } from 'date-fns'
 import { ptBR } from 'date-fns/locale';
 import Image from "next/legacy/image";
+import Link from 'next/link';
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 import { api } from '../../services/api';
@@ -30,9 +31,11 @@ export default function Episode({ episode }: EpisodeProps) {
   return (
     <div className={styles.episode}>
       <div className={styles.thumbnailContainer}>
-        <button type='button'>
-          <img src="/arrow-left.svg" alt="Voltar" />
-        </button>
+        <Link href='/'>
+          <button type='button'>
+            <img src="/arrow-left.svg" alt="Voltar" />
+          </button>
+        </Link>
         <Image 
           width={700} 
           height={160}
