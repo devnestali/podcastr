@@ -84,7 +84,6 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                      height={90}
                      src={episode.thumbnail}
                      alt={episode.title}
-                     objectFit='cover'
                     />
                   </td>
                   <td>
