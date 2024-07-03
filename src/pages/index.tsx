@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next';
-import Image from 'next/image';
+import Image from "next/image";
 import Link from 'next/link';
 import { format, parseISO } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
@@ -39,7 +39,6 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                   height={90} 
                   src={episode.thumbnail} 
                   alt={episode.title} 
-                  objectFit="cover"
                 />
 
                 <div className={styles.episodeDetails}>

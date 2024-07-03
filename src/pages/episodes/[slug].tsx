@@ -1,6 +1,6 @@
 import { format, parseISO } from 'date-fns'
 import { ptBR } from 'date-fns/locale';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { GetStaticPaths, GetStaticProps } from 'next';
 
 import { api } from '../../services/api';
@@ -38,6 +38,7 @@ export default function Episode({ episode }: EpisodeProps) {
           height={160}
           src={episode.thumbnail} 
           alt={episode.title}
+          objectFit='cover'
         />
 
         <button type='button'>
