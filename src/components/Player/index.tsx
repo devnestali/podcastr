@@ -3,9 +3,9 @@ import { useContext } from 'react';
 import { PlayerContext } from '../../contexts/PlayerContext';
 
 import styles from './styles.module.scss'
+import Image from 'next/image';
 
 export function Player() {
-const player = useContext(PlayerContext)
   const { episodeList, currentEpisodeIndex } = useContext(PlayerContext)
 
   const episode = episodeList[currentEpisodeIndex]
@@ -14,12 +14,25 @@ const player = useContext(PlayerContext)
     <div className={styles.playerContainer}>
       <header>
         <img src="/playing.svg" alt="Tocando agora" />
-        <strong>Tocando agora {episode?.title}</strong>
+        <strong>Tocando agora </strong>
       </header>
 
-      <div className={styles.emptyPlayer}>
+      { episode ? (
+        <div className={styles.currentEpisode}>
+          <Image 
+            width={250} 
+            height={250} 
+            src={episode.thumbnail} 
+            alt={episode.title}
+          />
+          <strong>{episode.title}</strong>
+          <span>{episode.members}</span>
+        </div>
+      ) : (
+        <div className={styles.emptyPlayer}>
         <strong>Selecione um podcast para ouvir</strong>
       </div>
+      ) }
 
       <footer className={styles.empty}>
         <div className={styles.progress}>
