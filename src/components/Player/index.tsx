@@ -14,8 +14,10 @@ const audioRef = useRef<HTMLAudioElement>(null);
     currentEpisodeIndex, 
     isPlaying,
     isLooping,
+    isShuffling,
     togglePlay,
     toggleLoop,
+    toggleShuffle,
     setPlayingState,
     playNext,
     playPrevious,
@@ -90,7 +92,12 @@ const audioRef = useRef<HTMLAudioElement>(null);
         )}
 
         <div className={styles.buttons}>
-          <button type='button' disabled={!episode}>
+          <button 
+            type='button' 
+            disabled={!episode || episodeList.length === 1}
+            onClick={toggleShuffle}
+            className={isShuffling ? styles.isActive : ''}
+          >
             <img src="/shuffle.svg" alt="Embaralhar" />
           </button>
           <button type='button' onClick={playPrevious} disabled={!episode || !hasPreviousEpisode}>
