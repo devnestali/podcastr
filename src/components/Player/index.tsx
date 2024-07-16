@@ -1,5 +1,5 @@
-import { useContext, useRef, useEffect } from 'react';
-import { PlayerContext } from '../../contexts/PlayerContext';
+import { useRef, useEffect } from 'react';
+import { usePlayer } from '../../contexts/PlayerContext';
 import Slider from 'rc-slider';
 
 import 'rc-slider/assets/index.css'
@@ -19,7 +19,7 @@ const audioRef = useRef<HTMLAudioElement>(null);
     playPrevious,
     hasNextEpisode,
     hasPreviousEpisode,
-  } = useContext(PlayerContext)
+  } = usePlayer()
 
   useEffect(() => {
     if(!audioRef.current) {
