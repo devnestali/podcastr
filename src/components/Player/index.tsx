@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import {  useRef, useEffect } from 'react';
 import { usePlayer } from '../../contexts/PlayerContext';
 import Slider from 'rc-slider';
 
@@ -12,7 +12,8 @@ const audioRef = useRef<HTMLAudioElement>(null);
   const { 
     episodeList, 
     currentEpisodeIndex, 
-    isPlaying, 
+    isPlaying,
+    isLooping,
     togglePlay,
     setPlayingState,
     playNext,
@@ -80,6 +81,7 @@ const audioRef = useRef<HTMLAudioElement>(null);
           <audio 
             src={episode.url}
             ref={audioRef}
+            loop={isLooping}
             autoPlay
             onPlay={() => setPlayingState(true)}
             onPause={() => setPlayingState(false)}
