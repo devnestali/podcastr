@@ -15,6 +15,7 @@ const audioRef = useRef<HTMLAudioElement>(null);
     isPlaying,
     isLooping,
     togglePlay,
+    toggleLoop,
     setPlayingState,
     playNext,
     playPrevious,
@@ -109,7 +110,12 @@ const audioRef = useRef<HTMLAudioElement>(null);
           <button type='button' onClick={playNext} disabled={!episode || !hasNextEpisode}>
             <img src="/play-next.svg" alt="Tocar próxima" />
           </button>
-          <button type='button' disabled={!episode}>
+          <button 
+            type='button' 
+            disabled={!episode}
+            onClick={toggleLoop}
+            className={isLooping ? styles.isActive : ''}
+          >
             <img src="/repeat.svg" alt="Repetir" />
           </button>
         </div>
