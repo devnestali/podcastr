@@ -8,11 +8,11 @@ Podcastr is a web application that brings together Rocketseat's FalaDev podcasts
 
 ## 📒 FEATURES
 
- - Integration with API
- - SPA (Single Page Application)
- - Communication between Components
- - ReactJS, NextJS, SaSS, Axios, TypeScript
- - Audio handling
+ - **Integration with API**
+ - **SPA (Single Page Application)**
+ - **Communication between Components**
+ - **ReactJS, NextJS, SaSS, Axios, TypeScript**
+ - **Audio handling**
 
 
 
